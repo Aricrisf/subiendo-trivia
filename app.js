@@ -6,16 +6,21 @@ var respuestasIncorrectas= document.getElementById('respuestasIncorrectas');
 
 
 var nombreUsuario = prompt("Ingresa tu nombre:");
-saludarUsario.innerHTML = "😊 Bienvenid@ " + nombreUsuario + " 😊" ;
-
-var iniciarPartida = parseInt(prompt("Ingresa el número que corresponda a tu respuesta \n ¿Quieres iniciar la partida? \n 1.Si \n 2.No"));
+saludarUsario.innerHTML = " Bienvenid@ " + nombreUsuario;
+function not(){
+  alert('Que pena!... te lo perdiste :(');
+  }
+//var iniciarPartida = parseInt(prompt("Ingresa el número que corresponda a tu respuesta \n ¿Quieres iniciar la partida? \n 1.Si \n 2.No"));
 
 // Evaluamos las respuestas del usuario (para iniciar el juego)
-
-if (iniciarPartida == 2) {//CASO 1; EN EL QUE EL USUARIO NO QUIERA JUGAR
-  mostrarResultados.innerHTML =  "<h1>Gracias por visitarnos, nos vemos la próxima 😉 </h1>";
-}
-else {//Caso en el que SI quiera continuar con el juego
+function yes(){
+  alert('excelente!!!..Entonces comencemos :)');
+  var x = document.getElementById('contenedorPrincipal');
+  if (x.style.display==="block") {x.style.display="none";
+  }
+  else {
+    x.style.display="block";
+  }
   respuestasCorrectas.innerHTML = "<h4> Preguntas correctas </h4>";
   respuestasIncorrectas.innerHTML = "<h4> Preguntas incorrectas </h4>";
 
@@ -25,7 +30,8 @@ else {//Caso en el que SI quiera continuar con el juego
   var primeraPregunta = parseInt(prompt("1.¿Cuál es la bebida preferida de Gonzalo? \n 1. Agua \n 2. Cerveza \n 3. Vino"));
   if (primeraPregunta == 2) { //Ejemplo de opción con NÚMERO
     respuestasCorrectas.innerHTML += "1.¿Cuál es la bebida preferida de Gonzalo? <br> <strong>Respuesta correcta:</strong> 🍺 La cerveza 🍺";
-  } else {
+  }
+  else {
     respuestasIncorrectas.innerHTML += "1.¿Cuál es la bebida preferida de Gonzalo? <br> <strong>La respuesta correcta era:</strong> 🍺 La cerveza 🍺";
   }
   //SEGUNDA PREGUNTA
@@ -33,7 +39,8 @@ else {//Caso en el que SI quiera continuar con el juego
   if (segundaPregunta == "A") { //Ejemplo de opción con LETRA
     //respuestasCorrectas.innerHTML += "<br> 2.¿Qué es lo que más le gusta hacer a Lulú? <br> <strong>Respuesta correcta:</strong> 🎤 Cantar 🎤";
     respuestasCorrectas.innerHTML = respuestasCorrectas.innerHTML + "<br> 2.¿Qué es lo que más le gusta hacer a Lulú? <br> <strong>Respuesta correcta:</strong> 🎤 Cantar 🎤";
-  } else {
+  }
+  else {
     respuestasIncorrectas.innerHTML += "<br> 2.¿Qué es lo que más le gusta hacer a Lulú? <br> <strong>Respuesta correcta:</strong> 🎤 Cantar 🎤";
   }
 }
